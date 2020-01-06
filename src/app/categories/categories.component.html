@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="loader" *ngIf="categoryLoader">
+      <mat-spinner diameter=50></mat-spinner>
+    </div>
+    <div class="column" *ngIf="!categoryLoader">
+      <mat-form-field>
+        <mat-select (selectionChange)="loadSubItems($event)" placeholder="Select category">
+          <mat-option *ngFor="let category of categories" value="{{category}}">
+            {{ category | uppercase }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <app-jokes [showLoader]="showLoader"></app-jokes>
+    </div>
+  </div>
+</div>
+

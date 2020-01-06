@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+.container {
+
+  width:auto;
+  margin: auto;
+  border:1px solid #cccccc;
+  padding: 10px;
+
+
+}
+.row {
+  text-align: center;
+}
+.column {
+  flex-wrap: wrap;
+}
+.loader {
+  margin: 0 auto;
+  width:15%;
+}

@@ -1,0 +1,46 @@
+<div cdkDropListGroup>
+  <div class="column-1">
+    <div class="jokes-box">
+      <h4>
+        Jokes list:
+      </h4>
+      <div class="loader" *ngIf="showLoader">
+        <mat-spinner diameter=50></mat-spinner>
+      </div>
+      <div
+      cdkDropList
+      [cdkDropListData]="jokesArray"
+      class="jokes-list"
+      *ngIf="!showLoader"
+      >
+          <div class="item-box" *ngFor="let item of jokesArray" cdkDrag>
+            <img class="jokes-box-thumbnail" src="{{item.icon_url}}" />
+            {{item.value}}
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="column-1">
+    <div class="jokes-box">
+      <h4>
+        Drop your favorites:
+      </h4>
+      <div
+      cdkDropList
+      [cdkDropListData]="favoriteJokesArray"
+      class="jokes-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="item-box" *ngFor="let item of favoriteJokesArray" cdkDrag>
+        <img class="jokes-box-thumbnail" src="{{item.icon_url}}" />
+          <div class="joke-text">
+            {{item.value}}
+          </div>
+          <div (click)="removeJoke(item.id)" class="removeButton">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">clear</mat-icon>
+          </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
