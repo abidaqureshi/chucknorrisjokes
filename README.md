@@ -7,7 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - npm v6.13.4
 - node v13.5.0
 
-## Tools used
+## Tech Stack
 - Angular 2+
 - Redux
 - angular-redux/store
